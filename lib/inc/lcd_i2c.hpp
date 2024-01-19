@@ -95,6 +95,7 @@ public:
     void write_char(uint8_t data);
     void print_string(const char *data, uint8_t length);
     void set_cursor_position(const char column, uint8_t line);
+    void load_custom_char(uint8_t cell, uint8_t *char_map);
 
     void display_on(void);
     void display_off(void);

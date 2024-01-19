@@ -157,6 +157,10 @@ void LCD::load_custom_char(uint8_t cell, uint8_t *char_map)
         this->write_command(LCD_RS_BIT, char_map[i]);
     }
 }
+void LCD::show_cg_ram(uint8_t addr)
+{
+    this->write_command(LCD_RS_BIT, addr);
+}
 void LCD::display_on(void)
 {
     lcd_status.display_screen_status |= LCD_DISPLAY_ON;

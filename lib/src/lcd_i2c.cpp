@@ -124,11 +124,11 @@ void LCD::write_bytes_i2c(uint8_t *data, uint8_t size)
 
     close(file);
 }
-void LCD::write_char(uint8_t data)
+void LCD::write_char(const char data)
 {
     this->write_data(data);
 }
-void LCD::print_string(uint8_t *data, uint8_t length)
+void LCD::print_string(const char *data, uint8_t length)
 {
     for (uint8_t i = 0; i < length; ++i)
     {

@@ -93,8 +93,8 @@ public:
     LCD(lcd_config_t config);
 
     void write_char(uint8_t data);
-    void print_string(uint8_t *data, uint8_t length);
-    void set_cursor_position(uint8_t column, uint8_t line);
+    void print_string(const char *data, uint8_t length);
+    void set_cursor_position(const char column, uint8_t line);
 
     void display_on(void);
     void display_off(void);

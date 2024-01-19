@@ -235,12 +235,12 @@ void LCD::display_shift_left(void)
 void LCD::clear_display(void)
 {
     this->write_command(LCD_RETURN_HOME, LCD_NO_COMMAND);
-    usleep(1000);
+    usleep(10000);
     this->write_command(LCD_CLEAR_DISPLAY, LCD_NO_COMMAND);
-    usleep(1000);
+    usleep(10000);
 }
 void LCD::return_home(void)
 {
     this->write_command(LCD_CLEAR_DISPLAY, LCD_NO_COMMAND);
-    usleep(1000);
+    usleep(10000);
 }

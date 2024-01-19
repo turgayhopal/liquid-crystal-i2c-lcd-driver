@@ -143,6 +143,20 @@ void LCD::set_cursor_position(uint8_t column, uint8_t line)
 
     this->write_command(LCD_SET_DDRAM_ADDRESS, command);
 }
+void LCD::load_custom_char(uint8_t cell, uint8_t *char_map)
+{
+    if (cell > 7) {
+        return;
+    }
+
+    uint8_t lcdCommand = LCD_SET_CGRAM_ADDRESS | (cell << 3);
+
+    this->write_command((uint8_t)0x00, lcdCommand);
+
+    for (uint8_t i = 0; i < 8; ++i) {
+        this->write_command(LCD_RS_BIT, char_map[i]);
+    }
+}
 void LCD::display_on(void)
 {
     lcd_status.display_screen_status |= LCD_DISPLAY_ON;

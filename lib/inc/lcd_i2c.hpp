@@ -96,6 +96,7 @@ public:
     void print_string(const char *data, uint8_t length);
     void set_cursor_position(const char column, uint8_t line);
     void load_custom_char(uint8_t cell, uint8_t *char_map);
+    void LCD::show_cg_ram(uint8_t addr);
 
     void display_on(void);
     void display_off(void);

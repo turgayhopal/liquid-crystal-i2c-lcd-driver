@@ -154,12 +154,12 @@ void LCD::load_custom_char(uint8_t cell, uint8_t *char_map)
     this->write_command((uint8_t)0x00, lcdCommand);
 
     for (uint8_t i = 0; i < 8; ++i) {
-        this->write_command(LCD_RS_BIT, char_map[i]);
+        this->write_data(char_map[i]);
     }
 }
 void LCD::show_cg_ram(uint8_t addr)
 {
-    this->write_command(LCD_RS_BIT, addr);
+    this->write_data(addr);
 }
 void LCD::display_on(void)
 {
